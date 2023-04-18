@@ -1,2 +1,3 @@
-# tictactoe_single_python
-single player game of tictactoe. play against computer.
+# tictactoe_python
+Single player tic-tac-toe in Python. 
+
