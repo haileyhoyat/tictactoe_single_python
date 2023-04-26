@@ -46,7 +46,7 @@ class TicTacToe:
                     self.apply_move(move.split(","), self.you)
                     self.turn = self.opponenet
                 else:
-                    print("Invalid move")
+                    print("Invalid move, spot on baord already taken")
             else:
                 move = [random.randint(0,2), random.randint(0,2)]
                 if self.check_valid_move(move):
@@ -91,9 +91,9 @@ class TicTacToe:
             int(move[0])
             return self.board[int(move[0])][int(move[1])] == " "
         except ValueError:
-            print("Input needs to be two integers: row, column")
+            print("Input needs to be two integers 0-2 in the format of: row, column")
         except IndexError:
-            print("Input needs to be two integer 0-2")
+            print("Input needs to be two integers 0-2 in the format of: row, column")
 
     """
     #check if move is valid
