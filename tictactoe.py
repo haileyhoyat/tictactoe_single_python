@@ -82,7 +82,20 @@ class TicTacToe:
             if self.counter == 9:
                 print("It is a tie")
                 exit()
+                
+    #check if move is valid
+    #note: move argument tranformed into list[] via move.split(",")
+    def check_valid_move(self, move):
+        
+        try:
+            int(move[0])
+            return self.board[int(move[0])][int(move[1])] == " "
+        except ValueError:
+            print("Input needs to be two integers: row, column")
+        except IndexError:
+            print("Input needs to be two integer 0-2")
 
+    """
     #check if move is valid
     #note: move argument tranformed into list[] via move.split(",")
     def check_valid_move(self, move):
@@ -91,7 +104,7 @@ class TicTacToe:
         else:
             self.handle_connection()
         #return self.board[int(move[0])][int(move[1])] == " "
-        
+    """
     
     #check for a winner
     def check_if_won(self):
