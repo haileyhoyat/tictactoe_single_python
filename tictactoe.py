@@ -47,7 +47,6 @@ class TicTacToe:
                     self.turn = self.opponenet
                 else:
                     print("Invalid move")
-
             else:
                 move = [random.randint(0,2), random.randint(0,2)]
                 if self.check_valid_move(move):
@@ -87,7 +86,12 @@ class TicTacToe:
     #check if move is valid
     #note: move argument tranformed into list[] via move.split(",")
     def check_valid_move(self, move):
-        return self.board[int(move[0])][int(move[1])] == " "
+        if (move[0] and move[1]) and self.board[int(move[0])][int(move[1])] == " ":
+            return self.board[int(move[0])][int(move[1])] == " "
+        else:
+            self.handle_connection()
+        #return self.board[int(move[0])][int(move[1])] == " "
+        
     
     #check for a winner
     def check_if_won(self):
@@ -127,6 +131,8 @@ class TicTacToe:
             print(" | ".join(self.board[row]))
             if row != 2:
                 print("--------------")
+            if row == 2:
+                print("\n\n_____________\n\n")
 
 game = TicTacToe()
 game.host_game("localhost", 9999)
