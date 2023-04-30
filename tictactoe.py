@@ -88,7 +88,7 @@ class TicTacToe:
     def check_valid_move(self, move):
         
         try:
-            int(move[0])
+            int(move[0]) and int(move[1])
             return self.board[int(move[0])][int(move[1])] == " "
         except ValueError:
             print("Input needs to be two integers 0-2 in the format of: row, column")
